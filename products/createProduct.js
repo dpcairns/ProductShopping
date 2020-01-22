@@ -38,7 +38,7 @@ function createProductLi(productObject) {
     p.className = 'cost';
     p.textContent = `$${productObject.price.toFixed(2)}`;
     const button = document.createElement('button');
-    button.textContent = 'Add';
+    button.textContent = 'Add to Cart';
     button.value = productObject.id;
     p.appendChild(button);
     li.appendChild(p);
@@ -50,8 +50,10 @@ function createProductLi(productObject) {
 }
 
 //loop through array and render products
-for (let i = 0; i < productArray.length; i++) {
-    createProductLi(productArray[i]);
+if (productArray) {
+    for (let i = 0; i < productArray.length; i++) {
+        createProductLi(productArray[i]);
+    }
 }
 
 export default createProductLi;

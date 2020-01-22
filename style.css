@@ -4,4 +4,29 @@
 
 body {
     color: goldenrod;
+    background-color: rgb(100, 63, 134);
+    border: 6px double chartreuse;
+    text-align: center;
+    font-family: 'Bangers', cursive;  
+}
+
+header {
+    font-size: larger;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    margin: 20px;
+    text-shadow: 2px 2px 2px rgb(61, 57, 57);
+}
+
+div {
+    margin: 20px;
+}
+
+a {
+    color: cornsilk;
+    transition: 0.3s;
+}
+
+a:hover {
+    text-shadow: 2px 2px 2px black;
 }

@@ -4,25 +4,70 @@ header {
     text-align: center;
 }
 
+body {
+    border: none;
+}
+
 ul {
     border: 6px double grey;
-    padding: 5px;
-    list-style: none;}
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 15px black;
+    padding: 10px;
+    margin: 20px 10px;
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    /* justify-content: center; */
+}
 
 li {
-    display: inline-block;
-    border: 2px solid black;
+    border: 3px outset;
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.681);
     background-color: wheat;
     width: 200px;
-    margin: 5px;
+    margin: 10px;
     padding: 20px;
-    text-align: center;}
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-shadow: 2px 2px 2px blanchedalmond;
+}
+
+h3 {
+    letter-spacing: 0.13em;
+    
+}
+
+p {
+    letter-spacing: 0.1em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
 
 button {
-    margin: 10px;}
+    font-family: inherit;
+    letter-spacing: inherit;
+    text-shadow: inherit;
+    color: inherit;
+    border: 2px outset;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    box-shadow: 2px 2px 2px black;
+}
+
 
 img {
     max-width: 150px;
     max-height: 300px;
+    /* border: 2px inset grey;
+    border-radius: 25%; */
     
 }

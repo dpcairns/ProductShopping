@@ -35,7 +35,7 @@ const cable = {
     image: 'cable.jpg',
     description: 'Watch TV from any dimension.',
     category: 'Machine',
-    price: 10,
+    price: 100,
 };
 
 const roy = {
@@ -44,7 +44,7 @@ const roy = {
     image: 'roy.png',
     description: 'A Virtual Reality Life Simulator',
     category: 'VR-Game',
-    price: 3,
+    price: 60,
 };
 
 const battery = {
