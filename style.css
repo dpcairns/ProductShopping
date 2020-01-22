@@ -4,10 +4,13 @@
 
 body {
     color: goldenrod;
-    background-color: rgb(100, 63, 134);
+    background-color: #643f86;
     border: 6px double chartreuse;
+    border-radius: 10px;
     text-align: center;
     font-family: 'Bangers', cursive;  
+    box-shadow: inset 0px 0px 15px black;
+    min-height: 300px;
 }
 
 header {
