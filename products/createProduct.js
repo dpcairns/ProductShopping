@@ -1,18 +1,25 @@
 //static design
-const plumbus = {
-    id: 'plumbus',
-    name: 'A Perfect Pink Plumbus',
-    image: 'plumbus.jpg',
-    description: 'No need to explain what a plumbus does. It\'s a plumbus, explaining it is like making a novel on how to crap.',
-    category: 'Household Object',
-    price: 9,
-};
+// const plumbus = {
+//     id: 'plumbus',
+//     name: 'A Perfect Pink Plumbus',
+//     image: 'plumbus.jpg',
+//     description: 'No need to explain what a plumbus does. It\'s a plumbus, explaining it is like making a novel on how to crap.',
+//     category: 'Household Object',
+//     price: 9,
+// };
 
+
+
+
+
+
+//import product array
+import productArray from './data.js';
 
 //get dom
 const productListContainer = document.getElementById('product-list');
 
-//create li
+//create li function
 function createProductLi(productObject) {
     const li = document.createElement('li');
     li.className = productObject.category;
@@ -40,4 +47,7 @@ function createProductLi(productObject) {
     //return li;
 }
 
-createProductLi(plumbus);
+//loop through array and render products
+for (let i = 0; i < productArray.length; i++) {
+    createProductLi(productArray[i]);
+}
