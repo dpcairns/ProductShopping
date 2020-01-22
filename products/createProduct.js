@@ -43,11 +43,15 @@ function createProductLi(productObject) {
     p.appendChild(button);
     li.appendChild(p);
 
-    productListContainer.appendChild(li);
-    //return li;
+    if (productListContainer) {
+        productListContainer.appendChild(li);
+    }
+    return li;
 }
 
 //loop through array and render products
 for (let i = 0; i < productArray.length; i++) {
     createProductLi(productArray[i]);
 }
+
+export default createProductLi;
