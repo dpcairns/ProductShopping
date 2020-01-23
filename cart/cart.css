@@ -1,16 +1,23 @@
+
+
 table {
-    border: 4px solid black;
-    border-collapse: collapse;
+    border: 6px double rgb(212, 102, 212);
+    border-radius: 10px;
     width: 100%;
+    margin: 20px auto;
+    padding: 10px;
+    box-shadow: inset 0px 0px 10px black;
 }
 
 th {
     height: 2em;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid rgb(68, 41, 131);
+    box-shadow: inset 0px -2px 1px rgba(64, 55, 68, 0.363);
     letter-spacing: 0.2em;
     padding: 5px;
 }
 
 tfoot {
-    border-top: 1px solid black;
+    border-top: 2px solid rgb(68, 41, 131);
 }
+
