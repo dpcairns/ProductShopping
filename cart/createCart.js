@@ -4,30 +4,37 @@ import { renderCartRow } from '../utilities/renderCartRow.js';
 import { calcOrderTotal } from '../utilities/calcOrderTotal.js';
 
 
-//dom
+//get dom
 const tableBody = document.getElementById('table-body');
 const finalTotalTd = document.getElementById('final-total');
 const linetotalsClass = document.getElementsByClassName('line-total');
 
-//state
+//create state
 const linetotalsArray = [];
 
-
-const myCartItems = cartItems;
-myCartItems.forEach((item, i) => {
+//single responsibility functions
+function renderAndAppendRow(item) {
     const newRow = renderCartRow(item.id);
     tableBody.appendChild(newRow);
-
-    const currentLine = linetotalsClass[i];
+}
+function pushNewLineTotal(index) {
+    const currentLine = linetotalsClass[index];
     const newTotal = Number(currentLine.textContent.replace('$', ''));
     linetotalsArray.push(newTotal);
+
+}
+function updateTotalLineCount() {
+    const finalTotalCount = calcOrderTotal(linetotalsArray);
+    finalTotalTd.textContent = `$${finalTotalCount}`;
+}
+
+//do the things
+cartItems.forEach((item, index) => {
+    renderAndAppendRow(item);
+    pushNewLineTotal(index);
 });
 
-
-const finalTotalCount = calcOrderTotal(linetotalsArray);
-
-finalTotalTd.textContent = `$${finalTotalCount}`;
-
+updateTotalLineCount();
 
 
 

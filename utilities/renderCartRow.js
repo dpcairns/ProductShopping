@@ -4,7 +4,13 @@ import { cartItems } from '../cart/cartData.js';
 import { calcLineItems } from './calcLineItem.js';
 
 export const renderCartRow = function(productId) {
+    if (!productId) return false;
     
+    //data
+    const currentItem = findById(productId, productArray);
+    const cartInfo = findById(productId, cartItems);
+    
+    //element creation
     const row = document.createElement('tr');
 
     const nameTd = document.createElement('td');
@@ -12,16 +18,14 @@ export const renderCartRow = function(productId) {
     const amountTd = document.createElement('td');
     const totalTd = document.createElement('td');
 
-
-    const currentItem = findById(productId, productArray);
-    const cartInfo = findById(productId, cartItems);
-
+    //updating element content
     nameTd.textContent = currentItem.name;
     costTd.textContent = `$${currentItem.price.toFixed(2)}`;
     amountTd.textContent = cartInfo.amount;
     totalTd.textContent = `$${calcLineItems(currentItem.price, cartInfo.amount)}`;
     totalTd.className = 'line-total';
 
+    //appending
     row.appendChild(nameTd);
     row.appendChild(costTd);
     row.appendChild(amountTd);

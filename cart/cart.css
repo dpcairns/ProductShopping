@@ -1,5 +1,8 @@
 
-
+body {
+    border: none;
+    box-shadow: none;
+}
 table {
     border: 6px double rgb(212, 102, 212);
     border-radius: 10px;
@@ -17,7 +20,22 @@ th {
     padding: 5px;
 }
 
-tfoot {
-    border-top: 2px solid rgb(68, 41, 131);
+tfoot tr{
+    border: 4px solid black;
+}
+
+button {
+    font-family: inherit;
+    letter-spacing: inherit;
+    text-shadow: inherit;
+    color: inherit;
+    border: 2px outset;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.589);
 }
 

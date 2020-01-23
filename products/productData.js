@@ -62,7 +62,7 @@ const schmeckle = {
     image: 'schmeckles.png',
     description: 'There always have been and always will be 500 Schmeckles in the world.',
     category: 'Currency',
-    price: 939.99,
+    price: 930,
 };
 
 const portal = {
@@ -80,7 +80,7 @@ const box = {
     image: 'box.png',
     description: 'Instantly defeats another Morty.',
     category: 'Gadget',
-    price: 34,
+    price: 34.98,
 };
 
 
