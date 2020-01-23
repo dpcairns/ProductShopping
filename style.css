@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: goldenrod;
+    background-color: #643f86;
+    border: 6px double chartreuse;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Bangers', cursive;  
+    box-shadow: inset 0px 0px 15px black;
+    min-height: 300px;
+}
+
+header {
+    font-size: larger;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    margin: 20px;
+    text-shadow: 2px 2px 2px rgb(61, 57, 57);
+}
+
+div {
+    margin: 20px;
+}
+
+a {
+    color: cornsilk;
+    transition: 0.3s;
+}
+
+a:hover {
+    text-shadow: 2px 2px 2px black;
+}
