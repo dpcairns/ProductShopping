@@ -16,31 +16,31 @@ test('testing findById', function(assert) {
 
     const testResult = findById('plumbus', cartItems);
 
-    assert.equal(expectedResult, testResult);
+    assert.equal(testResult, expectedResult);
 });
 
 test('testing calcLineItems', function(assert) {
     //plumbus cost $9 ive given the static cart an amount of 7
-    const expectedResult = 63.00;
+    const expectedResult = 69.86;
 
     const cost = productArray[0].price; //the plumbus objects price $9
     const quantity = cartItems[0].amount; //amount of plum, 7
     // console.log(`cost ${cost}, amount ${quantity}`);
     const testResult = calcLineItems(cost, quantity);
 
-    assert.equal(expectedResult, testResult);
+    assert.equal(testResult, expectedResult);
 
 });
 
 
 test('testing renderCart', function(assert) {
-    const expectedResult = '<tr><td>A Perfect Pink Plumbus</td><td>$9.00</td><td>7</td><td class="line-total">$63.00</td></tr>';
+    const expectedResult = '<tr><td>A Perfect Pink Plumbus</td><td>$9.98</td><td>7</td><td class="line-total">$69.86</td></tr>';
 
     //fed plumbus id 
     const testRow = renderCartRow('plumbus');
     const testResult = testRow.outerHTML;
     
-    assert.equal(expectedResult, testResult);
+    assert.equal(testResult, expectedResult);
     
 });
         
@@ -50,5 +50,5 @@ test('calcOrderTotal', function(assert) {
     const expectedResult = 25;   
     const testResult = calcOrderTotal(testArray);
         
-    assert.equal(expectedResult, testResult);
+    assert.equal(testResult, expectedResult);
 });

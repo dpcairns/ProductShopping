@@ -1,8 +1,3 @@
-// import productArray from '../products/productData.js';
-// import { cartItems } from '../cart/cartData';
-
-// import { calcLineItems } from './calcLineItem.js';
-
 
 //sums array
 export function calcOrderTotal(lineTotalsArray) {
@@ -10,5 +5,5 @@ export function calcOrderTotal(lineTotalsArray) {
     lineTotalsArray.forEach(line => {
         finalTotal = finalTotal + line;
     });
-    return finalTotal;
+    return finalTotal.toFixed(2);
 }
