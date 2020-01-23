@@ -6,7 +6,7 @@ import productArray from '../products/data.js';
 
 import { findById } from '../utilities/findById.js';
 import { calcLineItems } from '../utilities/calcLineItem.js';
-// import { renderCart } from '../utilities/renderCart.js';
+// import { renderCartRow } from '../utilities/renderCart.js';
 
 test('testing findById', function(assert) {
 
@@ -20,7 +20,7 @@ test('testing findById', function(assert) {
 
 test('testing calcLineItems', function(assert) {
     //plumbus cost $9 ive given the static cart an amount of 7
-    const expectedResult = 63;
+    const expectedResult = 63.00;
 
     const cost = productArray[0].price; //the plumbus objects price $9
     const quantity = cartItems[0].amount; //amount of plum, 7
