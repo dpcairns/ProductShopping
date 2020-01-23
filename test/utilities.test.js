@@ -1,12 +1,12 @@
 const test = QUnit.test;
 
 import { cartItems } from '../cart/cartData.js';
-import productArray from '../products/data.js';
+import productArray from '../products/productData.js';
 
 
 import { findById } from '../utilities/findById.js';
 import { calcLineItems } from '../utilities/calcLineItem.js';
-import { renderCartRow } from '../utilities/renderCart.js';
+import { renderCartRow } from '../utilities/renderCartRow.js';
 
 test('testing findById', function(assert) {
 

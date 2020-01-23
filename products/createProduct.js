@@ -14,7 +14,7 @@
 
 
 //import product array
-import productArray from './data.js';
+import productArray from './productData.js';
 
 //get dom
 const productListContainer = document.getElementById('product-list');

@@ -1,5 +1,5 @@
-import { findById } from '../utilities/findById.js';
-import productArray from '../products/data.js';
+import { findById } from './findById.js';
+import productArray from '../products/productData.js';
 import { cartItems } from '../cart/cartData.js';
 import { calcLineItems } from './calcLineItem.js';
 

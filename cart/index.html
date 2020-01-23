@@ -49,10 +49,32 @@
     </section>
     <br>
     <section id="dynamic-table">
-
+        <table>
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Cost</th>
+                    <th>Amount</th>
+                    <th>Line Total</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+    <!-- where the table will be rendered -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Total Cost:</td>
+                    <td id="final-total">-</td>
+                </tr>
+            </tfoot>
+        </table>
     </section>
     <br>
     <button type="button" id="order-button">Place Order</button>
+
+    <script type="module" src="./createCart.js"></script>
     
 </body>
 </html>
