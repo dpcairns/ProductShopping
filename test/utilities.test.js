@@ -6,7 +6,7 @@ import productArray from '../products/data.js';
 
 import { findById } from '../utilities/findById.js';
 import { calcLineItems } from '../utilities/calcLineItem.js';
-// import { renderCartRow } from '../utilities/renderCart.js';
+import { renderCartRow } from '../utilities/renderCart.js';
 
 test('testing findById', function(assert) {
 
@@ -24,18 +24,29 @@ test('testing calcLineItems', function(assert) {
 
     const cost = productArray[0].price; //the plumbus objects price $9
     const quantity = cartItems[0].amount; //amount of plum, 7
-    console.log(`cost ${cost}, amount ${quantity}`);
+    // console.log(`cost ${cost}, amount ${quantity}`);
     const testResult = calcLineItems(cost, quantity);
 
     assert.equal(expectedResult, testResult);
 
 });
 
-// test('testing renderCart', function(assert) {
-//     const expectedResult = ;
 
-//     const testResult = ;
+test('testing renderCart', function(assert) {
+    const expectedResult = '<tr><td>A Perfect Pink Plumbus</td><td>$9.00</td><td>7</td><td class="line-total">$63.00</td></tr>';
 
-//     assert.equal(expectedResult, testResult);
-
+    //fed plumbus id 
+    const testRow = renderCartRow('plumbus');
+    const testResult = testRow.outerHTML;
+    
+    assert.equal(expectedResult, testResult);
+    
+});
+        
+// test('calcOrderTotal', function(assert) {
+//         const expectedResult = ;
+        
+//         const testResult = ;
+        
+//         assert.equal(expectedResult, testResult);
 // });

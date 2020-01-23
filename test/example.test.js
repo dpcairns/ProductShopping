@@ -26,7 +26,7 @@ test('time to test a function', function(assert) {
     //Act 
     // Call the function you're testing and set the result to a const
     const myHTML = createProductLi(gwen).outerHTML;
-    console.log(myHTML);
+    // console.log(myHTML);
     //Assert
     // Make assertions about what is expected valid result
     assert.equal(myHTML, expectedHTML);
