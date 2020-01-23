@@ -1,0 +1,16 @@
+table {
+    border: 4px solid black;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    height: 2em;
+    border-bottom: 2px solid black;
+    letter-spacing: 0.2em;
+    padding: 5px;
+}
+
+tfoot {
+    border-top: 1px solid black;
+}
