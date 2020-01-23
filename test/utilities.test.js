@@ -7,6 +7,7 @@ import productArray from '../products/productData.js';
 import { findById } from '../utilities/findById.js';
 import { calcLineItems } from '../utilities/calcLineItem.js';
 import { renderCartRow } from '../utilities/renderCartRow.js';
+import { calcOrderTotal } from '../utilities/calcOrderTotal.js';
 
 test('testing findById', function(assert) {
 
@@ -43,10 +44,11 @@ test('testing renderCart', function(assert) {
     
 });
         
-// test('calcOrderTotal', function(assert) {
-//         const expectedResult = ;
+test('calcOrderTotal', function(assert) {
+
+    const testArray = [5, 6, 9, 5]
+    const expectedResult = 25;   
+    const testResult = calcOrderTotal(testArray);
         
-//         const testResult = ;
-        
-//         assert.equal(expectedResult, testResult);
-// });
+    assert.equal(expectedResult, testResult);
+});
