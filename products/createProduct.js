@@ -47,44 +47,44 @@ function createAndAppendButton(productObject, p) {
     const button = document.createElement('button');
     button.textContent = 'Add to Cart';
     button.value = productObject.id;
-    button.addEventListener('click', () => {
+    button.addEventListener('click', buttonAction(productObject));
+    p.appendChild(button);
+}
+    
+function buttonAction(productObject) {
+    return () => {
         const cart = localStorage.getItem('CART');
-
         let cartContents;
         if (cart) {
             const currentData = JSON.parse(cart);
             cartContents = currentData;
-        } else { 
-            cartContents = []; 
         }
-
-        if (!cartContents) return false;
-
+        else {
+            cartContents = [];
+        }
+        if (!cartContents)
+            return false;
         const item = findById(productObject.id, cartContents);
         let quantity;
         if (item) {
             item.amount++;
             quantity = item.amount;
-        } else {
+        }
+        else {
             const lineItem = {
                 id: `${productObject.id}`,
                 amount: 1,
-            }; 
-            cartContents.push(lineItem); 
+            };
+            cartContents.push(lineItem);
             quantity = 1;
         }
-        
         const newData = JSON.stringify(cartContents);
         localStorage.setItem('CART', newData);
-
         const name = findById(productObject.id, productArray).name;
         const message = `You have ${quantity} ${name}s`;
         alert(message);
-    });
-
-    p.appendChild(button);
+    };
 }
-    
 
 function createAndAppendImg(productObject, li) {
     const img = document.createElement('img');

@@ -1,4 +1,6 @@
-import { cartItems } from '../cart/cartData.js';
+// import { cartItems } from '../cart/cartData.js';
+const storedData = localStorage.getItem('CART');
+const cartItems = JSON.parse(storedData);
 
 import { renderCartRow } from '../utilities/renderCartRow.js';
 import { calcOrderTotal } from '../utilities/calcOrderTotal.js';
@@ -8,6 +10,7 @@ import { calcOrderTotal } from '../utilities/calcOrderTotal.js';
 const tableBody = document.getElementById('table-body');
 const finalTotalTd = document.getElementById('final-total');
 const linetotalsClass = document.getElementsByClassName('line-total');
+const clearButton = document.getElementById('clear-button');
 
 //create state
 const linetotalsArray = [];
@@ -29,12 +32,18 @@ function updateTotalLineCount() {
 }
 
 //do the things
-cartItems.forEach((item, index) => {
-    renderAndAppendRow(item);
-    pushNewLineTotal(index);
-});
+if (cartItems) {
+    cartItems.forEach((item, index) => {
+        renderAndAppendRow(item);
+        pushNewLineTotal(index);
+    });
+    updateTotalLineCount();
+}
 
-updateTotalLineCount();
+clearButton.addEventListener('click', () => {
+    localStorage.removeItem('CART');
+    location.reload();
+});
 
 
 
