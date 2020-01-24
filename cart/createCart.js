@@ -1,12 +1,9 @@
-// import { cartItems } from '../cart/cartData.js';
-const storedData = localStorage.getItem('CART');
-const cartItems = JSON.parse(storedData);
 
 import { renderCartRow } from '../utilities/renderCartRow.js';
 import { calcOrderTotal } from '../utilities/calcOrderTotal.js';
-import { clearCart } from '../utilities/clearCart.js';
 import { findById } from '../utilities/findById.js';
 import productArray from '../products/productData.js';
+import { getCart, clearCart } from '../utilities/cart-api.js';
 
 //get dom
 const tableBody = document.getElementById('table-body');
@@ -17,6 +14,7 @@ const orderButton = document.getElementById('order-button');
 
 //create state
 const linetotalsArray = [];
+const cartItems = getCart();
 
 //do the things
 if (cartItems) {
@@ -69,7 +67,7 @@ function createOrderMessaage() {
         const messageLine = `${amount} ${name}s, `;
         orderMessage += messageLine;
     });
-
-    orderMessage += 'on the way!';
+    const finalTotalCount = calcOrderTotal(linetotalsArray);
+    orderMessage += `on the way, and it only cost $${finalTotalCount}!`;
     return orderMessage;
 }

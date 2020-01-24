@@ -1,7 +1,7 @@
 
-//import product array
 import productArray from './productData.js';
 import { findById } from '../utilities/findById.js';
+import { addToCart } from '../utilities/cart-api.js';
 
 //get dom
 const productListContainer = document.getElementById('product-list');
@@ -13,7 +13,6 @@ if (productArray) {
         propagateProductLi(product);
     });
 }
-
 
 //main func
 function propagateProductLi(productObject) {
