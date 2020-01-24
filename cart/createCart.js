@@ -4,6 +4,7 @@ const cartItems = JSON.parse(storedData);
 
 import { renderCartRow } from '../utilities/renderCartRow.js';
 import { calcOrderTotal } from '../utilities/calcOrderTotal.js';
+import { clearCart } from '../utilities/clearCart.js';
 
 
 //get dom
@@ -11,6 +12,7 @@ const tableBody = document.getElementById('table-body');
 const finalTotalTd = document.getElementById('final-total');
 const linetotalsClass = document.getElementsByClassName('line-total');
 const clearButton = document.getElementById('clear-button');
+const orderButton = document.getElementById('order-button');
 
 //create state
 const linetotalsArray = [];
@@ -30,6 +32,10 @@ function updateTotalLineCount() {
     const finalTotalCount = calcOrderTotal(linetotalsArray);
     finalTotalTd.textContent = `$${finalTotalCount}`;
 }
+function styleButtonClick(button) {
+    button.style.border = '4px solid gold';
+    alert('you clicked');
+}
 
 //do the things
 if (cartItems) {
@@ -38,12 +44,22 @@ if (cartItems) {
         pushNewLineTotal(index);
     });
     updateTotalLineCount();
+} else {
+    orderButton.disabled = 'true';
 }
 
 clearButton.addEventListener('click', () => {
-    localStorage.removeItem('CART');
-    location.reload();
+    styleButtonClick(clearButton);
+    clearCart();
 });
 
+
+const orderMessage = JSON.stringify(cartItems, true, 2);
+
+orderButton.addEventListener('click', () => {
+    alert(orderMessage);
+    clearCart();
+    window.location = '../';
+});
 
 
