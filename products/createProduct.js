@@ -52,35 +52,14 @@ function createAndAppendButton(productObject, p) {
     
 function buttonAction(productObject) {
     return () => {
-        const cart = localStorage.getItem('CART');
-        let cartContents;
-        if (cart) {
-            const currentData = JSON.parse(cart);
-            cartContents = currentData;
-        }
-        else {
-            cartContents = [];
-        }
-        if (!cartContents)
-            return false;
-        const item = findById(productObject.id, cartContents);
-        let quantity;
-        if (item) {
-            item.amount++;
-            quantity = item.amount;
-        }
-        else {
-            const lineItem = {
-                id: `${productObject.id}`,
-                amount: 1,
-            };
-            cartContents.push(lineItem);
-            quantity = 1;
-        }
-        const newData = JSON.stringify(cartContents);
-        localStorage.setItem('CART', newData);
+        const quantity = addToCart(productObject); //this also calls the add to cart func
         const name = findById(productObject.id, productArray).name;
-        const message = `You have ${quantity} ${name}s`;
+        let message;
+        if (quantity === 1) {
+            message = `You've added ${name} to the cart.`;
+        } else {
+            message = `You have ${quantity} ${name}s in the cart.`;
+        }
         alert(message);
     };
 }
