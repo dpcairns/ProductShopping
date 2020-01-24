@@ -1,5 +1,6 @@
 
 import { findById } from '../utilities/findById.js';
+
 export function addToCart(productObject) {
     const cart = localStorage.getItem('CART');
     let cartContents;
@@ -36,6 +37,11 @@ export function clearCart() {
 
 export function getCart() {
     const storedData = localStorage.getItem('CART');
-    const cartItems = JSON.parse(storedData);
+    let cartItems;
+    if (storedData) {
+        cartItems = JSON.parse(storedData);
+    } else {
+        return false;
+    }
     return cartItems;
 }

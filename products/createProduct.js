@@ -56,7 +56,7 @@ function buttonAction(productObject) {
         const name = findById(productObject.id, productArray).name;
         let message;
         if (quantity === 1) {
-            message = `You've added ${name} to the cart.`;
+            message = `You've added a ${name} to the cart.`;
         } else {
             message = `You have ${quantity} ${name}s in the cart.`;
         }

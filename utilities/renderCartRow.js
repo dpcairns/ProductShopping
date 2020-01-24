@@ -1,10 +1,9 @@
 import { findById } from './findById.js';
 import productArray from '../products/productData.js';
-// import { cartItems } from '../cart/cartData.js';
 import { calcLineItems } from './calcLineItem.js';
+import { getCart } from './cart-api.js';
 
-const cartData = localStorage.getItem('CART');
-const cartItems = JSON.parse(cartData);
+const cartItems = getCart();
 
 export const renderCartRow = function(productId) {
     if (!productId) return false;
