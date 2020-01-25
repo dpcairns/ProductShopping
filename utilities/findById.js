@@ -1,9 +1,10 @@
-//matches an ID the long way:
+
 export const findById = (someId, someArray) => {
-    for (let i = 0; i < someArray.length; i++) {
-        const arrayItem = someArray[i];
+    let item;
+    someArray.forEach(arrayItem => {
         if (someId === arrayItem.id) {
-            return arrayItem;
+            item = arrayItem;
         }
-    }
-}
+    });
+    return item;
+};

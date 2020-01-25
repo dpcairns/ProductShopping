@@ -1,6 +1,7 @@
 
-//import product array
 import productArray from './productData.js';
+import { findById } from '../utilities/findById.js';
+import { addToCart } from '../utilities/cart-api.js';
 
 //get dom
 const productListContainer = document.getElementById('product-list');
@@ -12,7 +13,6 @@ if (productArray) {
         propagateProductLi(product);
     });
 }
-
 
 //main func
 function propagateProductLi(productObject) {
@@ -46,7 +46,22 @@ function createAndAppendButton(productObject, p) {
     const button = document.createElement('button');
     button.textContent = 'Add to Cart';
     button.value = productObject.id;
+    button.addEventListener('click', buttonAction(productObject));
     p.appendChild(button);
+}
+    
+function buttonAction(productObject) {
+    return () => {
+        const quantity = addToCart(productObject); //this also calls the add to cart func
+        const name = findById(productObject.id, productArray).name;
+        let message;
+        if (quantity === 1) {
+            message = `You've added a ${name} to the cart.`;
+        } else {
+            message = `You have ${quantity} ${name}s in the cart.`;
+        }
+        alert(message);
+    };
 }
 
 function createAndAppendImg(productObject, li) {
