@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Only</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../products/product.css">
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>Add New Products</header>
+    <section class="form-parent">
+        <form>
+            <label for="id">Id: </label>
+            <input type="text" name="id">
+    
+            <label for="name">Name: </label>
+            <input type="text" name="name">
+    
+            <label for="image">Image URL: </label>
+            <input type="text" name="image">
+    
+            <label for="price">Price: </label>
+            <input type="number" name="price">
+            <input id="admin-button" type="submit" value="Create New Product!">
+    
+        </form>
+        
+    </section>
+    
+
+    <section>
+        <ul id="admin-product-list"></ul>
+    </section>
+
+    <script type="module" src="./admin.js"></script>
+</body>
+</html>

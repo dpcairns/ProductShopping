@@ -1,5 +1,6 @@
 
 import { findById } from '../utilities/findById.js';
+import productArray from '../products/productData.js';
 
 export function addToCart(productObject) {
     const cart = localStorage.getItem('CART');
@@ -44,4 +45,19 @@ export function getCart() {
         return false;
     }
     return cartItems;
+}
+
+const productStorageData = localStorage.getItem('PRODUCTS');
+function seedProducts() {
+    if (!productStorageData) {
+        const stringyProducts = JSON.stringify(productArray);
+        localStorage.setItem('PRODUCTS', stringyProducts);
+    }
+}
+
+export function getProductData() {
+    seedProducts();
+    const parsedProductData = JSON.parse(productStorageData);
+    return parsedProductData;
+    
 }

@@ -12,7 +12,7 @@ import { calcOrderTotal } from '../utilities/calcOrderTotal.js';
 const testArray = [{ id: 'plumbus', amount: 7 }];
 const data = JSON.stringify(testArray);
 localStorage.setItem('CART', data);
-console.log(data);
+console.log(localStorage.getItem('CART'));
 
 test('testing findById', function(assert) {
 
