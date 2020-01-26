@@ -9,6 +9,8 @@ body {
     box-shadow: none;
 }
 
+
+
 ul {
     border: 6px double grey;
     border-radius: 10px;
@@ -68,4 +70,16 @@ button:hover {
 img {
     max-width: 170px;
     max-height: 300px; 
+}
+
+.checkout {
+    display: block;
+    width: 40%;
+    color: gold;
+    border: 6px double goldenrod;
+    font-size: 1.4em;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px black;
 }

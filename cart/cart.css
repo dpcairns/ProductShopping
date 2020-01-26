@@ -7,8 +7,8 @@ table {
     border: 6px double rgb(212, 102, 212);
     border-radius: 10px;
     
-    width: 100%;
-    margin: 20px auto;
+    width: 90%;
+    margin: auto;
     padding: 10px;
     box-shadow: inset 0px 0px 10px black;
     text-shadow: 2px 2px 2px rgba(121, 97, 62, 0.589);
@@ -18,29 +18,36 @@ table {
 th {
     height: 2em;
     font-size: 1.3em;
-    border-bottom: 2px solid rgb(68, 41, 131);
+    border-bottom: 3px double rgba(68, 41, 131, 0.521);
+    border-radius: 3px;
     box-shadow: inset 0px -2px 1px rgba(64, 55, 68, 0.363);
     letter-spacing: 0.2em;
     padding: 5px;
 }
 
-td {
+tbody td {
     margin: 10px;
     padding: 5px;
+    border-bottom: 1px solid rgba(152, 65, 173, 0.39);
+}
+
+tbody tr:hover {
+    background-color: rgba(158, 88, 204, 0.266);
 }
 
 
-
 .total{
-    border-top: 2px solid rgba(102, 80, 163, 0.548);
+    border-top: 2px solid rgba(102, 80, 163, 0.459);
     background: rgba(87, 95, 165, 0.158);
     text-decoration: underline;
 }
  
 .button {
     font-family: inherit;
-    letter-spacing: inherit;
-    text-shadow: inherit;
+    letter-spacing: 0.15em;
+    font-size: 1em;
+    padding: 5px 10px;
+    text-shadow: 2px 2px 2px rgb(248, 247, 244);
     color: inherit;
     border: 2px outset;
     border-radius: 5px;

@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     color: goldenrod;
     background-color: #643f86;
@@ -13,11 +14,26 @@ body {
     min-height: 300px;
 }
 
+nav {
+    height: 50px;
+    width: 80%;
+    display: flex;
+    padding: 17px;
+    justify-content: space-evenly;
+    
+    margin: 20px auto;
+    background-color: rgba(84, 45, 121, 0.459);
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.158) ;
+}
+
 header {
     font-size: larger;
     font-weight: bold;
-    letter-spacing: 0.2em;
-    margin: 20px;
+    color: gold;
+    text-decoration: underline rgb(205, 211, 156);
+    letter-spacing: 0.25em;
+    margin: 40px;
     text-shadow: 2px 2px 2px rgb(61, 57, 57);
 }
 
@@ -25,8 +41,16 @@ div {
     margin: 20px;
 }
 
+hr {
+    border: 3px double rgba(185, 168, 123, 0.582);
+    border-radius: 5px;
+    margin: 20px;
+}
+
 a {
-    color: cornsilk;
+    color: rgb(240, 226, 170);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.479);
+    letter-spacing: 0.15em;
     transition: 0.3s;
 }
 
