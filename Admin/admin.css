@@ -52,6 +52,10 @@ button {
     display: none;
 }
 
+.remove {
+    display: inline-block;
+}
+
 #admin-button {
     width: 170px;
     height: 40px;

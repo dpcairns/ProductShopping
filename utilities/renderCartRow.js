@@ -1,9 +1,9 @@
 import { findById } from './findById.js';
-import productArray from '../products/productData.js';
 import { calcLineItems } from './calcLineItem.js';
-import { getCart } from './cart-api.js';
+import { getCart, getProductData } from './cart-api.js';
 
 const cartItems = getCart();
+const productArray = getProductData();
 
 export const renderCartRow = function(productId) {
     if (!productId) return false;

@@ -1,7 +1,9 @@
 
-import productArray from './productData.js';
+
 import { findById } from '../utilities/findById.js';
-import { addToCart } from '../utilities/cart-api.js';
+import { addToCart, getProductData } from '../utilities/cart-api.js';
+
+const productArray = getProductData();
 
 //get dom
 const productListContainer = document.getElementById('product-list');

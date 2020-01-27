@@ -67,3 +67,30 @@ export function addProductData(someObject, dataArray) {
     localStorage.setItem('PRODUCTS', stringyProducts); 
     return stringyProducts;
 }
+
+export function removeProduct(someObject, productArray) {
+    confirm(`Are you sure you wanna remove this sweet, sweet ${someObject.name}`);
+    productArray.forEach((item, index) => {
+        if (someObject.id === item.id) {
+            productArray.splice(index, 1);
+        }
+    });
+    const newData = JSON.stringify(productArray);
+    localStorage.setItem('PRODUCTS', newData);
+
+    const cartArray = getCart();
+
+    if (cartArray) {
+        cartArray.forEach((item, index) => {
+            if (someObject.id === item.id) {
+                cartArray.splice(index, 1);
+            }
+        });
+        const newCartData = JSON.stringify(cartArray);
+        localStorage.setItem('CART', newCartData);
+    }
+
+
+
+    location = './';
+}

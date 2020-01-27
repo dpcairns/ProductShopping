@@ -2,8 +2,7 @@
 import { renderCartRow } from '../utilities/renderCartRow.js';
 import { calcOrderTotal } from '../utilities/calcOrderTotal.js';
 import { findById } from '../utilities/findById.js';
-import productArray from '../products/productData.js';
-import { getCart, clearCart } from '../utilities/cart-api.js';
+import { getCart, clearCart, getProductData } from '../utilities/cart-api.js';
 
 //get dom
 const tableBody = document.getElementById('table-body');
@@ -15,6 +14,7 @@ const orderButton = document.getElementById('order-button');
 //create state
 const linetotalsArray = [];
 const cartItems = getCart();
+const productArray = getProductData();
 
 //do the things
 if (cartItems) {

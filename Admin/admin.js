@@ -1,4 +1,4 @@
-import { getProductData, addProductData} from '../utilities/cart-api.js';
+import { getProductData, addProductData, removeProduct} from '../utilities/cart-api.js';
 import propagateProductLi from '../products/createProduct.js';
 
 
@@ -13,6 +13,7 @@ const products = getProductData();
 products.forEach(item => {
     if (products) {
         const newProduct = propagateProductLi(item);
+        addRemoveButton(item, newProduct);
         parentList.appendChild(newProduct);
     }
 });
@@ -42,10 +43,24 @@ form.addEventListener('submit', (event) => {
     if (match) return;
 
     const newProductLi = propagateProductLi(newProduct);
+    addRemoveButton(newProduct, newProductLi);
     parentList.appendChild(newProductLi);
 
     addProductData(newProduct, products);
 
     form.reset();
 });
+
+function addRemoveButton(productObject, li) {
+    const removeButton = document.createElement('button');
+
+    removeButton.textContent = 'Remove';
+    removeButton.value = productObject.id;
+    removeButton.className = 'remove';
+    removeButton.addEventListener('click', () => {
+        removeProduct(productObject, products);
+    });
+    li.appendChild(removeButton);
+
+}
 
