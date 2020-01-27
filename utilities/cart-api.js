@@ -59,11 +59,11 @@ export function getProductData() {
     seedProducts();
     const parsedProductData = JSON.parse(productStorageData);
     return parsedProductData;
-    
 }
 
 export function addProductData(someObject, dataArray) {
     dataArray.push(someObject);
     const stringyProducts = JSON.stringify(dataArray);
     localStorage.setItem('PRODUCTS', stringyProducts); 
+    return stringyProducts;
 }

@@ -7,12 +7,12 @@ import { findById } from '../utilities/findById.js';
 import { calcLineItems } from '../utilities/calcLineItem.js';
 import { renderCartRow } from '../utilities/renderCartRow.js';
 import { calcOrderTotal } from '../utilities/calcOrderTotal.js';
+import { addProductData } from '../utilities/cart-api.js';
 
 //feeding local storage for test
 const testArray = [{ id: 'plumbus', amount: 7 }];
 const data = JSON.stringify(testArray);
 localStorage.setItem('CART', data);
-console.log(localStorage.getItem('CART'));
 
 test('testing findById', function(assert) {
 
@@ -36,18 +36,6 @@ test('testing calcLineItems', function(assert) {
     assert.equal(testResult, expectedResult);
 
 });
-
-
-// test('testing renderCart', function(assert) {
-//     const expectedResult = '<tr><td>Perfect Pink Plumbus</td><td>$9.98</td><td>7</td><td class="line-total">$69.86</td></tr>';
-    
-//     //fed plumbus id 
-//     const testRow = renderCartRow('plumbus');
-//     const testResult = testRow.outerHTML;
-    
-//     assert.equal(testResult, expectedResult);
-    
-// });
         
 test('calcOrderTotal', function(assert) {
 
@@ -56,4 +44,19 @@ test('calcOrderTotal', function(assert) {
     const testResult = calcOrderTotal(testArray);
         
     assert.equal(testResult, expectedResult);
+});
+
+test('testing add product', function(assert) {
+
+    const expectedArray = JSON.stringify([0, 4, 5, 2, 7]);
+
+    const myArray = [0, 4, 5, 2];
+
+    const newNum = 7;
+
+    const myResult = addProductData(newNum, myArray);
+
+    assert.equal(myResult, expectedArray);
+
+
 });
