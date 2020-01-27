@@ -25,14 +25,21 @@ submitButton.addEventListener('click', (event) => {
     const newData = new FormData(form);
     
     const numberizePrice = Number(newData.get('price'));
+    
     const newProduct = {
         name: newData.get('name'),
         id: newData.get('id'),
-        price: `$${numberizePrice.toFixed(2)}`,
-        image: newData.get('image')
+        price: numberizePrice,
+        image: newData.get('image'),
+        url: true
     };
     
-    console.log(newProduct);
+    
+    const newProductLi = propagateProductLi(newProduct);
+    
+    console.log(newProductLi);
+
+    parentList.appendChild(newProductLi);
     
     // products.push(newProduct);
     

@@ -34,7 +34,7 @@ export default propagateProductLi; //for testing
 //single responsibility functions
 function createAndAppendP(productObject, li) {
     const p = document.createElement('p');
-    p.className = 'cost';
+    p.className = 'price';
     p.textContent = `$${productObject.price.toFixed(2)}`;
 
     createAndAppendButton(productObject, p);
@@ -66,7 +66,11 @@ function buttonAction(productObject) {
 
 function createAndAppendImg(productObject, li) {
     const img = document.createElement('img');
-    img.src = `../assets/${productObject.image}`;
+    if (productObject.url) {
+        img.src = productObject.image;
+    } else {
+        img.src = `../assets/${productObject.image}`;
+    }
     img.alt = `image of a ${productObject.name}`;
     li.appendChild(img);
 }
