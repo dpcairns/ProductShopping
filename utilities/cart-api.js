@@ -61,3 +61,10 @@ export function getProductData() {
     return parsedProductData;
     
 }
+
+export function addProductData(someObject) {
+    const currentProducts = getProductData();
+    currentProducts.push(someObject);
+    const stringyProducts = JSON.stringify(currentProducts);
+    localStorage.setItem('PRODUCTS', stringyProducts);
+}
