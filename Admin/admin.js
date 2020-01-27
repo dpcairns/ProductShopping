@@ -3,9 +3,8 @@ import propagateProductLi from '../products/createProduct.js';
 
 
 //dom
-// const form = document.querySelector('form');
-const parentList = document.getElementById('admin-product-list');
-const submitButton = document.getElementById('admin-button');
+const form = document.querySelector('form');
+const parentList = document.getElementById('admin-product-list');;
 
 //state
 const products = getProductData();
@@ -19,9 +18,8 @@ products.forEach(item => {
 });
 
 
-submitButton.addEventListener('click', (event) => {
+form.addEventListener('submit', (event) => {
     event.preventDefault();
-    const form = document.querySelector('form');
     const newData = new FormData(form);
     
     const numberizePrice = Number(newData.get('price'));
@@ -34,16 +32,20 @@ submitButton.addEventListener('click', (event) => {
         url: true
     };
     
-    
-    const newProductLi = propagateProductLi(newProduct);
-    
-    console.log(newProductLi);
+    let match = false;
+    products.forEach(item => {
+        if (item.id === newProduct.id) {
+            alert('Product already Exists');
+            match = true;
+        }
+    });
+    if (match) return;
 
+    const newProductLi = propagateProductLi(newProduct);
     parentList.appendChild(newProductLi);
-    
-    // products.push(newProduct);
-    
-    // addProductData(newProduct);
-    // event.reset;
+
+    addProductData(newProduct, products);
+
+    form.reset();
 });
 

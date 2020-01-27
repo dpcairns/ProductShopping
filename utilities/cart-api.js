@@ -62,9 +62,8 @@ export function getProductData() {
     
 }
 
-export function addProductData(someObject) {
-    const currentProducts = getProductData();
-    currentProducts.push(someObject);
-    const stringyProducts = JSON.stringify(currentProducts);
-    localStorage.setItem('PRODUCTS', stringyProducts);
+export function addProductData(someObject, dataArray) {
+    dataArray.push(someObject);
+    const stringyProducts = JSON.stringify(dataArray);
+    localStorage.setItem('PRODUCTS', stringyProducts); 
 }
