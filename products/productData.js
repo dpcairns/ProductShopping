@@ -10,25 +10,6 @@
 
 
 
-
-const plumbus = {
-    id: 'plumbus',
-    name: 'Perfect Pink Plumbus',
-    image: 'plumbus.jpg',
-    description: 'No need to explain what a plumbus does. It\'s a plumbus, explaining it is like making a novel on how to crap.',
-    category: 'Household-Object',
-    price: 9.98,
-};
-
-const gwen = {
-    id: 'gwen',
-    name: 'Gwendolyn',
-    image: 'gwen.png',
-    description: 'Will keep you company, always.',
-    category: 'Robot',
-    price: 69.69,
-};
-
 const cable = {
     id: 'cable',
     name: 'Interdimensional Cable',
@@ -84,6 +65,6 @@ const box = {
 };
 
 
-const productArray = [plumbus, gwen, cable, roy, battery, schmeckle, portal, box];
+const productArray = { cable, roy, battery, schmeckle, portal, box };
 
-export default productArray;
+export productArray;

@@ -1,5 +1,5 @@
 
-import { findById } from '../utilities/findById.js';
+import { findById } from '../utilities/find-by-id.js';
 import productArray from '../products/productData.js';
 
 export function addToCart(productObject) {
@@ -51,7 +51,7 @@ const productStorageData = localStorage.getItem('PRODUCTS');
 function seedProducts() {
     if (!productStorageData) {
         const stringyProducts = JSON.stringify(productArray);
-        localStorage.setItem('PRODUCTS', stringyProducts);
+        localStorage.setItem('__PRODUCTS', stringyProducts);
     }
 }
 

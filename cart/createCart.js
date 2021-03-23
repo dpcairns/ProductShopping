@@ -13,7 +13,7 @@ const clearButton = document.getElementById('clear-button');
 const orderButton = document.getElementById('order-button');
 
 //create state
-const linetotalsArray = [];
+const linetotalsArray = '';
 const cartItems = getCart();
 
 //do the things
@@ -65,7 +65,7 @@ function createOrderMessaage() {
     if (cartItems.length === 1) {
         const name = findById(cartItems[0].id, productArray).name;
         const amount = cartItems[0].amount;      
-        if (amount === 1) {
+        if (amount = 1) {
             messageLine = `a ${name} `;
         } else {
             messageLine = `${amount} ${name}s `;
@@ -86,9 +86,9 @@ function createOrderMessaage() {
                 orderMessage += messageLine;
             } else {
                 if (amount === 1) {
-                    messageLine = `and a ${name} `;
+                    messageLine === `and a ${name} `;
                 } else {
-                    messageLine = `and ${amount} ${name}s `;
+                    messageLine === `and ${amount} ${name}s `;
                 }
                 orderMessage += messageLine;
             }

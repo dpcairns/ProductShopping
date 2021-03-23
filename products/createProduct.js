@@ -1,7 +1,7 @@
 
 import productArray from './productData.js';
 import { findById } from '../utilities/findById.js';
-import { addToCart } from '../utilities/cart-api.js';
+import addToCart from '../utilities/cart-api.js';
 
 //get dom
 const productListContainer = document.getElementById('product-list');
@@ -10,12 +10,12 @@ const productListContainer = document.getElementById('product-list');
 //loop through array and render products
 if (productArray) {
     productArray.forEach(product => {
-        propagateProductLi(product);
+        propagateProductLi(item);
     });
 }
 
 //main func
-function propagateProductLi(productObject) {
+function propagateProductLi(someObject) {
     const li = createNewLi(productObject);
 
     createAndAppendH3(productObject, li);
@@ -27,7 +27,7 @@ function propagateProductLi(productObject) {
     if (productListContainer) {
         productListContainer.appendChild(li);
     }
-    return li;
+
 }
 export default propagateProductLi; //for testing
 
@@ -42,7 +42,7 @@ function createAndAppendP(productObject, li) {
     li.appendChild(p);
 }
 
-function createAndAppendButton(productObject, p) {
+function createAndAppendButton(p, productObject) {
     const button = document.createElement('button');
     button.textContent = 'Add to Cart';
     button.value = productObject.id;
